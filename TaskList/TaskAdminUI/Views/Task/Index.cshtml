@@ -1,0 +1,59 @@
+﻿@using EntityLayer
+@model List<TaskOwner>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>GÖREV EKLEME EKRANI</h1>
+<div><a asp-action="TaskEkle" asp-controller="Task" class="btn btn-primary">Yeni Görev Kaydı Ekle</a></div>
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="card">
+                <div class="card-body">
+
+                    <!-- Default Table -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">GOREV ID</th>
+                                <th scope="col">GOREV ADI</th>
+                                <th scope="col">GOREV BASLIK</th>
+                                <th scope="col">GOREV ACIKLAMASI</th>
+                                <th scope="col">GOREV DURUMU</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var a in Model)
+                            {
+                                <tr>
+                                    <td>@a.owner_id</td>
+                                    <td>@a.owner_name</td>
+                                    <td>@a.owner_task_title</td>
+                                    <td>@a.owner_explanation</td>
+                                    <td>@a.owner_status</td>
+                                    <td>
+                                        <a onclick="return confirm('Silmek istediğinize eminmisiniz?');" asp-controller="Task" asp-action="TaskSil" asp-route-id="@a.owner_id" class="btn btn-danger">sil</a>
+
+                                        <a asp-controller="Task" asp-action="TaskGuncelle" asp-route-id="@a.owner_id" class="btn btn-warning">Güncelle</a>
+                                    </td>
+                                    <td>
+                                    </td>
+
+
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                    <!-- End Default Table Example -->
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+

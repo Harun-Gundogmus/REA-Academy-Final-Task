@@ -1,0 +1,18 @@
+﻿@model EntityLayer.TaskComment
+@{
+    ViewData["Title"] = "CommentEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/jquery/jquery.min.js"></script>
+<script src="~/jquery-validate/jquery.validate.min.js"></script>
+<script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+<h1>YORUM EKLE</h1>
+<form asp-action="CommentEkle" asp-controller="Comment" method="post">
+    <div class="mb-3">
+        <label class="form-label">YORUMUNUZ</label>
+        <input asp-for="comment" type="text" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">YENİ YORUM EKLE</button>
+</form>
+

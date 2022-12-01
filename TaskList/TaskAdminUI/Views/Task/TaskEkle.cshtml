@@ -1,0 +1,28 @@
+﻿@model EntityLayer.TaskOwner;
+@{
+    ViewData["Title"] = "TaskEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1>YENİ GÖREV EKLEME SAYFASI</h1>
+<form asp-action="TaskEkle" asp-controller="Task" method="post">
+    <div class="mb-3">
+        <label class="form-label">GÖREV ADI</label>
+        <input asp-for="owner_name" type="text" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">GÖREV BAŞLIĞI</label>
+        <input asp-for="owner_task_title" type="text" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">GÖREV AÇIKLAMASI</label>
+        <input asp-for="owner_explanation" type="text" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">GÖREV DURUMU</label>
+        <input asp-for="owner_status" type="text" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">YENİ GÖREV KAYDI EKLE</button>
+</form>
+
